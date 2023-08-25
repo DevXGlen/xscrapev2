@@ -1,0 +1,23 @@
+How to run this file:
+
+Generate new session command:
+python gen_auth.py 
+
+
+email = "michaelmuzon@tutanota.com"
+username = "MichaelMuz1686"
+password = "Michael5512Muzon41"
+
+or this command:
+playwright codegen --save-storage=auth.json
+
+# run command 
+// before you run the python files  
+venv\Scripts\activate
+playwright codegen --save-storage=auth.json
+
+// python files 
+python get_timeline_tweets.py
+python parse_timeline_tweets.py 
+python get_timeline_modules.py 
+python parse_timeline_modules.py 
