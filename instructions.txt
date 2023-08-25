@@ -16,6 +16,13 @@ playwright codegen --save-storage=auth.json
 venv\Scripts\activate
 playwright codegen --save-storage=auth.json
 
+// create folders first 
+conversation_tweets 
+images 
+query_conversations
+query_timelines
+timeline_tweets
+
 // python files 
 python get_timeline_tweets.py
 python parse_timeline_tweets.py 
