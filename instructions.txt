@@ -1,30 +1,19 @@
-How to run this file:
+Steps to run this file:
 
-Generate new session command:
-python gen_auth.py 
+1. Open your terminal and switch to command prompt
 
-
-email = "michaelmuzon@tutanota.com"
-username = "MichaelMuz1686"
-password = "Michael5512Muzon41"
-
-or this command:
-playwright codegen --save-storage=auth.json
-
-# run command 
-// before you run the python files  
+2. (run this command before you execute the .py files)
 venv\Scripts\activate
+
+3. (run this command at least once a day before you start scraping data)
 playwright codegen --save-storage=auth.json
 
-// create folders first 
-conversation_tweets 
-images 
-query_conversations
-query_timelines
-timeline_tweets
+4. 
+CHANGE YOUR .env file fields for every search word or topic
 
-// python files 
+5. (run these python files sequentially)
 python get_timeline_tweets.py
 python parse_timeline_tweets.py 
 python get_timeline_modules.py 
 python parse_timeline_modules.py 
+
