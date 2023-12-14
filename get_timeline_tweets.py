@@ -26,7 +26,7 @@ def scrape():
                
 
     with sync_playwright() as play:
-        browser = play.chromium.launch(headless=False)
+        browser = play.chromium.launch(headless=True)
 
         context = browser.new_context(storage_state="./auth.json")
         print(context.storage_state())
