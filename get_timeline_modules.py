@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from glob import glob
 import re
 
-load_dotenv()
+load_dotenv(override=True)
 
 def create_convo_dir():
     if (not os.path.exists(f'query_conversations/{os.getenv("QUERY_CONVO_DIR")}')):
@@ -27,7 +27,7 @@ def scrape(tweet_id="404", timeline_tweet_url="https://twitter.com", query_word=
                 json.dump({"url": response.url, "body": response.json(), "parent_tweet_id":tweet_id, "parent_tweet_url":timeline_tweet_url, "parent_reply_count":reply_count, "query_word":query_word}, f, ensure_ascii=False)
                 
     with sync_playwright() as play:
-        browser = play.chromium.launch(headless=True)
+        browser = play.chromium.launch(headless=False)
 
         context = browser.new_context(storage_state="./auth.json")
         #print(context.storage_state())

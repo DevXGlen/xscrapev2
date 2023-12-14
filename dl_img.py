@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 import time
 import random
 
+load_dotenv(override=True)
+
 def create_img_dir():
     if (not os.path.exists(f'images/{os.getenv("IMG_DIR")}')):
         os.makedirs(f'images/{os.getenv("IMG_DIR")}')
@@ -24,7 +26,6 @@ def download_image(url):
     except Exception as e:
         #print(f'error: {url} not downloaded')
         return ""
-
-load_dotenv()
+    
 create_img_dir()
 

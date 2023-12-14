@@ -6,6 +6,9 @@ lang: str -> language of the tweet
 until: str (yyyy-mm-dd) -> until date of the tweet 
 since: str (yyyy-mm-dd) -> since date of the tweet 
 """
+import os 
+from dotenv import load_dotenv
+
 def query_page(query_word='twitter', min_replies=3, lang="en", until="2023-08-31", since="2023-07-01"):
     query_page = "https://twitter.com/"
 

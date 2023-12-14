@@ -6,18 +6,13 @@ import uuid
 import os 
 from dotenv import load_dotenv
 
-load_dotenv()
-
-"""
-_query_word = "kano"
-_until = "2023-08-13"
-_since = "2023-07-01"
-num_scroll = 20
-"""
+load_dotenv(override=True)
 
 #query_page = f"https://twitter.com/search?f=top&q=({query_word})%20min_replies%3A3%20lang%3Aen%20until%3A2023-08-31%20since%3A2023-07-01&src=typed_query"
 
-query_page = query_options.query_page(query_word=os.getenv('QUERY_WORD'), until=os.getenv("UNTIL"), since=os.getenv("SINCE"))
+query_page = query_options.query_page(query_word=os.getenv("QUERY_WORD"), since=os.getenv('SINCE'), until=os.getenv('UNTIL'))
+
+# print(query_page)
 
 def scrape():
     def check_json(response):
@@ -31,7 +26,7 @@ def scrape():
                
 
     with sync_playwright() as play:
-        browser = play.chromium.launch(headless=True)
+        browser = play.chromium.launch(headless=False)
 
         context = browser.new_context(storage_state="./auth.json")
         print(context.storage_state())
@@ -50,7 +45,7 @@ def scrape():
             time.sleep(10)
         
         print('done scrolling')
-        time.sleep(20)
+        time.sleep(10)
         print('done scraping')
         context.close()
         browser.close()

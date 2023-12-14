@@ -1,9 +1,9 @@
 from playwright.sync_api import Playwright, sync_playwright, expect
 import time
 
-email = "michaelmuzon@tutanota.com"
-username = "MichaelMuz1686"
-password = "Michael5512Muzon41"
+email = ""
+username = ""
+password = ""
 
 def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)

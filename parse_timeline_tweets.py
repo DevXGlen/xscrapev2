@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 import io
 import log as l
 
-load_dotenv()
+load_dotenv(override=True)
 
 def create_timeline_dir():
     if (not os.path.exists(f'timeline_tweets/{os.getenv("TIMELINE_DIR")}')):

@@ -6,7 +6,7 @@ import log as l
 import os
 import dl_img
 
-load_dotenv()
+load_dotenv(override=True)
 
 def create_convo_dir():
     if (not os.path.exists(f'conversation_tweets/{os.getenv("CONVO_DIR")}')):
